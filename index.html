@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FUTSAL FIT — 나에게 맞는 풋살 포지션 추천</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Futsal Court Tactical Pattern -->
+  <div class="bg-court-layer" aria-hidden="true">
+    <svg class="bg-court-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+      <rect x="60" y="50" width="1320" height="800" rx="18" stroke="#B8FF3B" stroke-width="2" />
+      <line x1="720" y1="50" x2="720" y2="850" stroke="#B8FF3B" stroke-width="2" />
+      <circle cx="720" cy="450" r="130" stroke="#B8FF3B" stroke-width="2" />
+      <circle cx="720" cy="450" r="8" fill="#B8FF3B" />
+      <path d="M60 250 A200 200 0 0 1 60 650" stroke="#B8FF3B" stroke-width="2" />
+      <path d="M1380 250 A200 200 0 0 0 1380 650" stroke="#B8FF3B" stroke-width="2" />
+      <circle cx="290" cy="450" r="5" fill="#B8FF3B" />
+      <circle cx="1150" cy="450" r="5" fill="#B8FF3B" />
+      <line x1="0" y1="150" x2="1440" y2="150" stroke="#FFFFFF" stroke-opacity="0.25" stroke-dasharray="6 14" />
+      <line x1="0" y1="750" x2="1440" y2="750" stroke="#FFFFFF" stroke-opacity="0.25" stroke-dasharray="6 14" />
+    </svg>
+  </div>
+
+  <!-- Sticky Topbar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button type="button" class="brand" id="brandHomeBtn" aria-label="FUTSAL FIT 홈으로">
+        <div class="brand-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9.5"></circle>
+            <polygon points="12,7 16.5,10.2 14.8,15.5 9.2,15.5 7.5,10.2" fill="currentColor" stroke="none"></polygon>
+          </svg>
+        </div>
+        <div class="brand-text">FUTSAL <span>FIT</span></div>
+      </button>
+      <div class="topbar-pill">PRO COACH ANALYZER</div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <!-- ==================== 1. HOME VIEW ==================== -->
+    <section id="view-home" class="view active" aria-labelledby="home-heading">
+      <div class="hero-card">
+        <div class="hero-logo-badge">
+          <span class="hero-logo-dot"></span>
+          FUTSAL FIT · POSITION LAB
+        </div>
+
+        <h1 id="home-heading" class="hero-title">
+          나에게 딱 맞는<br /><span class="highlight">풋살 포지션</span>은?
+        </h1>
+
+        <p class="hero-subtitle">
+          12가지 질문으로 알아보는 나의 풋살 플레이 스타일!<br />
+          풋살 전문 코치가 능력치부터 맞춤 훈련법까지 분석해 드립니다.
+        </p>
+
+        <!-- Futsal Court & Dynamic Player Illustration -->
+        <div class="hero-visual">
+          <svg viewBox="0 0 520 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="풋살 경기장과 선수 전술 일러스트">
+            <defs>
+              <linearGradient id="heroPitchBg" x1="0" y1="0" x2="520" y2="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0E2440" />
+                <stop offset="100%" stop-color="#0A192F" />
+              </linearGradient>
+              <radialGradient id="heroGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#B8FF3B" stop-opacity="0.34" />
+                <stop offset="100%" stop-color="#B8FF3B" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <rect x="8" y="8" width="504" height="204" rx="14" fill="url(#heroPitchBg)" stroke="#B8FF3B" stroke-opacity="0.35" stroke-width="1.5" />
+            <!-- Court Lines -->
+            <line x1="260" y1="8" x2="260" y2="212" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5" />
+            <circle cx="260" cy="110" r="36" stroke="#FFFFFF" stroke-opacity="0.22" stroke-width="1.5" />
+            <circle cx="260" cy="110" r="3" fill="#B8FF3B" />
+            <!-- Left & Right Penalty Arcs -->
+            <path d="M8 56 A54 54 0 0 1 8 164" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="1.5" />
+            <path d="M512 56 A54 54 0 0 0 512 164" stroke="#FFFFFF" stroke-opacity="0.24" stroke-width="1.5" />
+            <!-- Goals -->
+            <rect x="2" y="84" width="6" height="52" rx="2" fill="#B8FF3B" fill-opacity="0.7" />
+            <rect x="512" y="84" width="6" height="52" rx="2" fill="#38BDF8" fill-opacity="0.7" />
+            <!-- Tactical Passing Lines -->
+            <path d="M74 110 L170 110 L272 52 L396 108" stroke="#B8FF3B" stroke-width="2" stroke-dasharray="6 5" stroke-opacity="0.75" />
+            <path d="M170 110 L272 168 L396 108" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="5 5" stroke-opacity="0.65" />
+            <!-- Spotlight -->
+            <circle cx="396" cy="108" r="56" fill="url(#heroGlow)" />
+            <!-- Position Nodes -->
+            <!-- GOLEIRO -->
+            <circle cx="62" cy="110" r="17" fill="#13264D" stroke="#38BDF8" stroke-width="2" />
+            <text x="62" y="114" text-anchor="middle" fill="#FFFFFF" font-size="10" font-weight="800" font-family="Chakra Petch, sans-serif">GK</text>
+            <!-- FIXO -->
+            <circle cx="170" cy="110" r="18" fill="#13264D" stroke="#B8FF3B" stroke-width="2" />
+            <text x="170" y="114" text-anchor="middle" fill="#B8FF3B" font-size="9.5" font-weight="800" font-family="Chakra Petch, sans-serif">FIXO</text>
+            <!-- ALA Top & Bottom -->
+            <circle cx="272" cy="52" r="18" fill="#13264D" stroke="#B8FF3B" stroke-width="2" />
+            <text x="272" y="56" text-anchor="middle" fill="#B8FF3B" font-size="10" font-weight="800" font-family="Chakra Petch, sans-serif">ALA</text>
+            <circle cx="272" cy="168" r="18" fill="#13264D" stroke="#38BDF8" stroke-width="2" />
+            <text x="272" y="172" text-anchor="middle" fill="#E0F2FE" font-size="10" font-weight="800" font-family="Chakra Petch, sans-serif">ALA</text>
+            <!-- PIVO Striker Silhouette Node -->
+            <circle cx="396" cy="108" r="24" fill="#B8FF3B" />
+            <text x="396" y="112" text-anchor="middle" fill="#0B132B" font-size="11" font-weight="900" font-family="Chakra Petch, sans-serif">PIVO</text>
+            <!-- Futsal Ball flying toward goal -->
+            <path d="M424 104 Q458 94 486 105" stroke="#B8FF3B" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="490" cy="107" r="6.5" fill="#FFFFFF" stroke="#0B132B" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <!-- 4 Positions Quick Preview -->
+        <div class="position-preview-grid">
+          <div class="pos-chip">
+            <span class="pos-chip-code">PIVO</span>
+            <span class="pos-chip-name">피보</span>
+            <span class="pos-chip-role">최전방 해결사</span>
+          </div>
+          <div class="pos-chip">
+            <span class="pos-chip-code">ALA</span>
+            <span class="pos-chip-name">아라</span>
+            <span class="pos-chip-role">측면 공수 엔진</span>
+          </div>
+          <div class="pos-chip">
+            <span class="pos-chip-code">FIXO</span>
+            <span class="pos-chip-name">픽소</span>
+            <span class="pos-chip-role">후방 수비 사령관</span>
+          </div>
+          <div class="pos-chip">
+            <span class="pos-chip-code">GOLEIRO</span>
+            <span class="pos-chip-name">골레이로</span>
+            <span class="pos-chip-role">골문 최후의 보루</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" id="startTestBtn">
+          <span>테스트 시작하기</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <div class="hero-meta">
+          <span class="hero-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            예상 소요 시간 2~3분
+          </span>
+          <span class="hero-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            총 12문항 · 맞춤 리포트 즉시 생성
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. QUIZ VIEW ==================== -->
+    <section id="view-quiz" class="view" aria-live="polite">
+      <div class="quiz-wrapper">
+        <div class="progress-header">
+          <div class="progress-top-row">
+            <div class="q-counter">QUESTION <strong id="qNumCurrent">01</strong> / 12</div>
+            <div class="q-percent" id="qProgressPercent">응답 완료 0 / 12</div>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="8" id="progressBarAria">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="step-dots" id="stepDots" aria-label="질문 이동 표시"></div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-stage" id="questionStage">
+            <div class="q-tag" id="qCategoryTag">STEP 01 · 경험 분석</div>
+            <h2 class="q-title" id="qTitle">질문 제목</h2>
+            <div class="options-list" id="optionsList" role="radiogroup"></div>
+          </div>
+
+          <div class="quiz-alert" id="quizAlert" role="alert">
+            <span id="quizAlertText">답변을 선택해 주세요!</span>
+            <button type="button" class="alert-jump-btn" id="alertJumpBtn" style="display:none;">미응답 문항으로 이동</button>
+          </div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn-secondary" id="prevBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"></path>
+                <path d="m12 19-7-7 7-7"></path>
+              </svg>
+              이전
+            </button>
+            <button type="button" class="btn-primary btn-next" id="nextBtn">
+              <span id="nextBtnText">다음 질문</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <p class="quiz-helper">상단 스텝 바를 눌러 이전 답변을 언제든 수정할 수 있어요.</p>
+      </div>
+    </section>
+
+    <!-- ==================== 2.5 ANALYZING VIEW ==================== -->
+    <section id="view-analyzing" class="view">
+      <div class="analyzing-card">
+        <div class="radar-spinner">
+          <div class="radar-ring"></div>
+          <div class="radar-ring inner"></div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B8FF3B" stroke-width="2.2">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polygon points="12,7 16,10 14.5,15 9.5,15 8,10" fill="#B8FF3B" stroke="none"></polygon>
+          </svg>
+        </div>
+        <h2 class="analyzing-title">풋살 코치가 플레이 스타일을 분석 중이에요!</h2>
+        <p class="analyzing-sub">12가지 응답을 바탕으로 4개 포지션 적합도와<br />맞춤형 훈련 리포트를 생성하고 있습니다...</p>
+      </div>
+    </section>
+
+    <!-- ==================== 3. RESULT VIEW ==================== -->
+    <section id="view-result" class="view">
+      <div class="result-grid">
+        <!-- ① Recommended Position Player Card + ③ Coach Message -->
+        <div class="player-card-hero">
+          <div class="player-card-pattern"></div>
+          <div class="player-card-top">
+            <div>
+              <div class="fut-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                BEST MATCH POSITION
+              </div>
+              <div class="pos-headline">
+                <h2 class="pos-name-kr" id="resPosKr">피보</h2>
+                <span class="pos-name-en" id="resPosEn">PIVO</span>
+              </div>
+              <p class="pos-role-desc" id="resPosDesc"></p>
+              <div class="pos-traits-row" id="resTraitsRow"></div>
+            </div>
+
+            <!-- EA FC Style Mini Player Card -->
+            <div class="fut-shield">
+              <div class="fut-shield-header">
+                <div class="fut-ovr-box">
+                  <span class="fut-ovr-label">FIT SCORE</span>
+                  <span class="fut-ovr-num" id="resFitScore">92%</span>
+                </div>
+                <div class="fut-pos-badge">
+                  <span class="fut-pos-code" id="resShieldCode">PIVO</span>
+                  <div id="resPosIconBox"></div>
+                </div>
+              </div>
+              <div class="fut-silhouette-box" id="resSilhouetteBox"></div>
+              <div class="fut-mini-stats" id="resMiniStats"></div>
+            </div>
+          </div>
+
+          <!-- Coach Recommendation Quote -->
+          <div class="coach-card">
+            <div class="coach-avatar" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div>
+              <div class="coach-label">
+                <span>FUTSAL FIT 전담 코치의 추천 멘트</span>
+              </div>
+              <p class="coach-quote" id="resCoachQuote"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ② Position Suitability + ④ Play Style Radar -->
+        <div class="result-two-col">
+          <!-- ② Suitability Bars -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3 class="card-title">포지션별 적합도</h3>
+              </div>
+              <span class="card-badge">0 ~ 100%</span>
+            </div>
+
+            <div class="suitability-list" id="suitabilityList"></div>
+
+            <div class="disclaimer-box">
+              ※ 포지션 적합도는 사용자의 자기평가 응답을 바탕으로 포지션별 핵심 능력 가중치를 적용해 산출한 참고 점수이며, 실제 경기 실력을 객관적으로 측정한 결과는 아닙니다.
+            </div>
+          </div>
+
+          <!-- ④ Play Style 6-Metric Analysis -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                  </svg>
+                </div>
+                <h3 class="card-title">플레이 스타일 분석</h3>
+              </div>
+              <span class="card-badge">6 STATS</span>
+            </div>
+
+            <div class="radar-wrap">
+              <svg class="radar-svg" id="radarSvg" viewBox="0 0 300 280" role="img" aria-label="6가지 플레이 스타일 능력치 그래프"></svg>
+              <div class="stat-bars-grid" id="statBarsGrid"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ⑤ Strengths (3) & Improvements (2) -->
+        <div class="result-two-col">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="card-title">나의 핵심 강점</h3>
+              </div>
+              <span class="card-badge">TOP 3</span>
+            </div>
+            <div class="analysis-list" id="strengthsList"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <div class="card-icon" style="color:#FBBF24; background:rgba(251,191,36,0.14); border-color:rgba(251,191,36,0.34);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20V10"></path>
+                    <path d="M18 20V4"></path>
+                    <path d="M6 20v-4"></path>
+                  </svg>
+                </div>
+                <h3 class="card-title">보완하면 더 빛날 점</h3>
+              </div>
+              <span class="card-badge" style="color:#FBBF24; background:rgba(251,191,36,0.14); border-color:rgba(251,191,36,0.32);">GROWTH 2</span>
+            </div>
+            <div class="analysis-list" id="improvementsList"></div>
+          </div>
+        </div>
+
+        <!-- ⑥ Recommended Drills (3) + Interactive Training Intensity Slider -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 class="card-title">포지션 맞춤 추천 훈련</h3>
+            </div>
+            <span class="card-badge" id="drillsPosBadge">CUSTOM DRILLS</span>
+          </div>
+
+          <div class="slider-panel">
+            <div class="slider-header">
+              <label for="trainingIntensitySlider" class="slider-label">주당 훈련 강도 조절 (슬라이더로 세트·시간 맞춤 조절)</label>
+              <span class="slider-value-badge" id="sliderValueBadge">표준 루틴 · 주 2회</span>
+            </div>
+            <input type="range" id="trainingIntensitySlider" class="custom-slider" min="1" max="5" step="1" value="2" aria-label="주당 훈련 강도 조절" />
+            <div class="slider-scale">
+              <span>주 1회 (가볍게)</span>
+              <span>주 2회</span>
+              <span>주 3회 (추천)</span>
+              <span>주 4회</span>
+              <span>주 5회 (집중)</span>
+            </div>
+          </div>
+
+          <div class="drills-grid" id="drillsGrid"></div>
+        </div>
+
+        <!-- ⑦ Top-down Futsal Pitch Position Guide -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="card-title">경기장 내 포지션 위치 안내</h3>
+            </div>
+            <span class="card-badge">TOP-DOWN MAP</span>
+          </div>
+
+          <div class="pitch-container">
+            <div class="pitch-svg-frame">
+              <svg class="pitch-svg" id="pitchMapSvg" viewBox="0 0 480 280" role="img" aria-label="위에서 내려다본 풋살 경기장 포지션 활동 영역"></svg>
+            </div>
+            <div class="pitch-legend">
+              <div class="pitch-zone-info">
+                <h4 id="pitchZoneTitle">추천 포지션 활동 영역</h4>
+                <p id="pitchZoneDesc"></p>
+              </div>
+              <div>
+                <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:8px; font-weight:700;">다른 포지션 위치도 비교해 보세요</div>
+                <div class="pitch-toggle-row" id="pitchToggleRow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ⑧ Save Image, Share, Retry -->
+        <div class="action-bar">
+          <button type="button" class="btn-action btn-save-img" id="saveImageBtn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            결과 이미지로 저장하기
+          </button>
+          <button type="button" class="btn-action btn-share" id="shareBtn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            결과 공유하기
+          </button>
+          <button type="button" class="btn-action btn-retry" id="retryBtn">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            다시 테스트하기
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
